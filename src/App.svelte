@@ -1,14 +1,19 @@
 <script lang="ts">
   import Singin from "./componets/Singin.svelte";
+  import SingInCodeTemplate from "./componets/code-templates/SingInCodeTemplate.svelte";
 
-  let backgroundColor: '#e9e2e2';
-  let cardColor: '#e9e2e2';
-  let inputType = "url";
+  let backgroundColor: "#17B486";
+  let cardColor: "#e9e2e2";
+  let inputType = "color";
   let backgroundType = "image";
-  let blurValue;
-  let opacity;
-  let saturation;
+  let r:number = 17;
+  let g:number = 25;
+  let b:number = 40;
+  let opacity:number = 0.75;
+  let blur:number = 10;
+  let saturation:number = 180;
 
+  let code = `const add = (a: number, b: number) => ${backgroundColor} + b;`;
   const answer = () => {
     if (backgroundType === "solid") {
       inputType = "color";
@@ -21,16 +26,30 @@
 
   const getInputValue = (e: any) => {
     backgroundColor = e.target.value;
-    // console.log(e.target.value);
   };
 
   const getCardValue = (e: any) => {
     cardColor = e.target.value;
+    r = parseInt(e.target.value.slice(1, 3), 16);
+    g = parseInt(e.target.value.slice(3, 5), 16);
+    b = parseInt(e.target.value.slice(5, 7), 16);
+  };
+
+  const getBlurValue = (e: any) => {
+    blur = e.target.value;
+  };
+
+  const getOpacityValue = (e: any) => {
+    opacity = e.target.value;
+  };
+
+  const getSaturationValue = (e: any) => {
+    saturation = e.target.value;
   };
 </script>
 
 <div class="bg-gray-800 place-content-center h-screen font-serif text-gray-300">
-  <div class="container flex flex-col mx-auto gap-y-4">
+  <div class="container flex flex-col mx-auto gap-y-4 px-52">
     <section class=" bg-gray-800 rounded-sm flex flex-col gap-y-2">
       <header>
         <h1 class="text-4xl">Glassmorphism CSS Generator</h1>
@@ -70,6 +89,7 @@
             class="bg-gray-900 w-full border-2"
             type={inputType}
             on:input={(e) => getInputValue(e)}
+            value="#17B486"
           />
         </div>
 
@@ -95,24 +115,42 @@
             on:input={(e) => getCardValue(e)}
             class="bg-gray-900 w-full"
             type="color"
-
-            value="#ffffff"
+            value="#111928"
           />
         </div>
 
         <div class="flex flex-col gap-y-2">
           <label for="">Blur value</label>
-          <input type="range" />
+          <input
+            on:input={(e) => getBlurValue(e)}
+            min="0"
+            max="25"
+            value="10"
+            type="range"
+          />
         </div>
 
         <div class="flex flex-col gap-y-2">
           <label for="">Opacity</label>
-          <input type="range" />
+          <input
+            on:input={(e) => getOpacityValue(e)}
+            min="0"
+            max="1"
+            value="0.8"
+            step="0.1"
+            type="range"
+          />
         </div>
 
         <div class="flex flex-col gap-y-2">
           <label for="">Saturation</label>
-          <input type="range" />
+          <input
+            on:input={(e) => getSaturationValue(e)}
+            min="0"
+            max="200"
+            value="180"
+            type="range"
+          />
         </div>
       </form>
 
@@ -129,7 +167,15 @@
             </div>
           </div>
           <div class="mx-2 mb-2">
-            <Singin backgroundColor={backgroundColor} cardColor={cardColor} />
+            <Singin
+              {backgroundColor}
+              {r}
+              {g}
+              {b}
+              {opacity}
+              {blur}
+              {saturation}
+            />
           </div>
         </div>
 
@@ -143,6 +189,16 @@
               <button>Copy</button>
             </div>
           </div>
+
+          <SingInCodeTemplate 
+          {backgroundColor}
+          {r}
+          {g}
+          {b}
+          {opacity}
+          {blur}
+          {saturation}
+          />
         </div>
       </div>
     </section>
