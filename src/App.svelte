@@ -49,7 +49,7 @@
 </script>
 
 <div class="bg-gray-800 place-content-center h-screen font-serif text-gray-300">
-  <div class="container flex flex-col mx-auto gap-y-4 px-52">
+  <div class="container flex flex-col mx-auto gap-y-4 xl:px-52">
     <section class=" bg-gray-800 rounded-sm flex flex-col gap-y-2">
       <header>
         <h1 class="text-4xl">Glassmorphism CSS Generator</h1>

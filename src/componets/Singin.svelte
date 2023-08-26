@@ -25,16 +25,16 @@
         <label class="block text-sm font-medium" for="email">Email</label>
 
         <div
-          class="relative flex items-center mt-1 rounded-md border border-red-400"
+          class="relative flex items-center mt-1 rounded-md border border-gray-400 bg-gray-900"
         >
           <img
-            class="w-8 h-8 px-2 border-r rounded-l-md"
+            class="w-9 h-9 px-2 border-r rounded-l-md"
             src="sms-svgrepo-com.svg"
             alt=""
           />
 
           <input
-            class="w-full border-0 bg-transparent px-2 py-1 text-sm text-gray-500 outline-none"
+            class="email w-full border-0 bg-transparent px-2 py-2 text-sm text-gray-500 outline-none"
             type="email"
             id="email"
             placeholder="example@domain.com"
@@ -46,16 +46,16 @@
         <label class="block text-sm font-medium" for="password">Password</label>
 
         <div
-          class="relative flex items-center mt-1 rounded-md border border-red-400"
+          class="relative flex items-center mt-1 rounded-md border border-gray-400 bg-gray-900"
         >
           <img
-            class="w-8 h-8 px-2 border-r rounded-l-md"
+            class="w-9 h-9 px-2 border-r rounded-l-md"
             src="lock-alt-svgrepo-com.svg"
             alt=""
           />
 
           <input
-            class="w-full border-0 bg-transparent px-2 py-1 text-sm text-gray-500 outline-none"
+            class="password w-full border-0 bg-transparent px-2 py-2 text-sm text-gray-500 outline-none placeholder"
             type="password"
             id="password"
             placeholder="Your password"
@@ -88,3 +88,13 @@
     </form>
   </div>
 </div>
+
+<style>
+  .email:not(:placeholder-shown) {
+    @apply text-white;
+  }
+
+  .password:not(:placeholder-shown) {
+    @apply text-white;
+  }
+</style>
