@@ -32,14 +32,4 @@ body {
   {@html a11yDark}
 </svelte:head>
 
-
-<p>          {backgroundColor}
-  {r}
-  {g}
-  {b}
-  {opacity}
-  {blur}
-  {saturation}</p>
-
-
 <Highlight language={css} {code} />

@@ -86,7 +86,7 @@
           <!-- <p class="text-xs">Background color</p> -->
           <label for="">Background color</label>
           <input
-            class="bg-gray-900 w-full border-2"
+            class="bg-gray-900 w-full border-[1px]"
             type={inputType}
             on:input={(e) => getInputValue(e)}
             value="#17B486"
@@ -100,7 +100,7 @@
             on:change={() => answer()}
             name=""
             id=""
-            class="bg-gray-900"
+            class="bg-gray-900  border-[1px]"
           >
             <option value="solid">Solid</option>
             <option value="mesh-gradient">Mesh gradient</option>
