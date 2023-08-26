@@ -1,6 +1,6 @@
 <script lang="ts">
   import Singin from "./componets/Singin.svelte";
-  import SingInCodeTemplate from "./componets/code-templates/SingInCodeTemplate.svelte";
+  import SingInCodeTemplate from "./componets/code-templates/cssTemplate.svelte";
 
   let backgroundColor: "#17B486";
   let cardColor: "#e9e2e2";
