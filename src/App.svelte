@@ -1,31 +1,39 @@
 <script lang="ts">
+  import { iaLight } from "svelte-highlight/styles";
   import Singin from "./componets/Singin.svelte";
-  import SingInCodeTemplate from "./componets/code-templates/cssTemplate.svelte";
+  import CssTemplate from "./componets/code-templates/cssTemplate.svelte";
 
-  let backgroundColor: "#17B486";
+  let backgroundColor: any = `url("https://media.gq.com.mx/photos/60cf8f0a33c54bdef67610ee/16:9/w_2560%2Cc_limit/paisaje.jpg")`;
   let cardColor: "#e9e2e2";
-  let inputType = "color";
+  let inputType = "url";
   let backgroundType = "image";
-  let r:number = 17;
-  let g:number = 25;
-  let b:number = 40;
-  let opacity:number = 0.75;
-  let blur:number = 10;
-  let saturation:number = 180;
+  let backgroundTypeCssTemplate = "background-image";
+  let r: number = 17;
+  let g: number = 25;
+  let b: number = 40;
+  let opacity: number = 0.75;
+  let blur: number = 10;
+  let saturation: number = 180;
 
-  let code = `const add = (a: number, b: number) => ${backgroundColor} + b;`;
-  const answer = () => {
+  const getInputTypeValue = () => {
+    backgroundColor = "";
     if (backgroundType === "solid") {
       inputType = "color";
+      backgroundTypeCssTemplate = "background";
+      backgroundColor = "#17B486";
     } else if (backgroundType === "mesh-gradient") {
       inputType = "color";
+      backgroundTypeCssTemplate = "background";
     } else {
       inputType = "url";
+      backgroundColor = `url("https://media.gq.com.mx/photos/60cf8f0a33c54bdef67610ee/16:9/w_2560%2Cc_limit/paisaje.jpg")`;
+      backgroundTypeCssTemplate = "background-image";
     }
   };
 
   const getInputValue = (e: any) => {
     backgroundColor = e.target.value;
+    if (backgroundType === "image") backgroundColor = `url(${e.target.value})`;
   };
 
   const getCardValue = (e: any) => {
@@ -80,27 +88,54 @@
 
     <section class="flex flex-col gap-y-4">
       <form
-        class="flex justify-between items-center border-2 p-2 bg-gray-900 rounded-sm gap-4"
+        class="flex justify-between items-center border-2 px-2 py-4 bg-gray-900 rounded-sm gap-4"
       >
-        <div class="flex flex-col gap-y-2">
+        <div class="flex flex-col gap-y-2 w-52">
           <!-- <p class="text-xs">Background color</p> -->
           <label for="">Background color</label>
-          <input
-            class="bg-gray-900 w-full border-[1px]"
-            type={inputType}
-            on:input={(e) => getInputValue(e)}
-            value="#17B486"
-          />
+          {#if backgroundType === "solid"}
+            <input
+              class="bg-gray-900 w-full border-[1px]"
+              type="color"
+              on:input={(e) => getInputValue(e)}
+              bind:value={backgroundColor}
+            />
+          {:else if backgroundType === "mesh-gradient"}
+            <div class="flex gap-2">
+              <input
+                class="bg-gray-900 border-[1px] w-full"
+                type="color"
+                on:input={(e) => getInputValue(e)}
+              />
+              <input
+                class="bg-gray-900 border-[1px] w-full"
+                type="color"
+                on:input={(e) => getInputValue(e)}
+              />
+              <input
+                class="bg-gray-900 border-[1px] w-full"
+                type="color"
+                on:input={(e) => getInputValue(e)}
+              />
+            </div>
+          {:else}
+            <input
+              class="bg-gray-900 w-full border-[1px]"
+              type="url"
+              on:input={(e) => getInputValue(e)}
+              value="https://media.gq.com.mx/photos/60cf8f0a33c54bdef67610ee/16:9/w_2560%2Cc_limit/paisaje.jpg"
+            />
+          {/if}
         </div>
 
         <div class="flex flex-col gap-y-2">
           <label for="">Background type</label>
           <select
             bind:value={backgroundType}
-            on:change={() => answer()}
+            on:change={() => getInputTypeValue()}
             name=""
             id=""
-            class="bg-gray-900  border-[1px]"
+            class="bg-gray-900 border-[1px]"
           >
             <option value="solid">Solid</option>
             <option value="mesh-gradient">Mesh gradient</option>
@@ -190,15 +225,18 @@
             </div>
           </div>
 
-          <SingInCodeTemplate 
-          {backgroundColor}
-          {r}
-          {g}
-          {b}
-          {opacity}
-          {blur}
-          {saturation}
-          />
+          <div class="break-words">
+            <CssTemplate
+              backgroundType={backgroundTypeCssTemplate}
+              {backgroundColor}
+              {r}
+              {g}
+              {b}
+              {opacity}
+              {blur}
+              {saturation}
+            />
+          </div>
         </div>
       </div>
     </section>

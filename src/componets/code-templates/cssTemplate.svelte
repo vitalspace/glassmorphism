@@ -3,6 +3,7 @@
   import css from "svelte-highlight/languages/css";
   import a11yDark from "svelte-highlight/styles/a11y-dark";
 
+  export let backgroundType: string;
   export let backgroundColor: string = "#17B486";
   export let r: number;
   export let g: number;
@@ -14,7 +15,7 @@
   $: code = `
 /* Background styles */
 body {
-    background-color: ${backgroundColor};
+    ${backgroundType}: ${backgroundColor};
 }
 
 /* Glassmorphism card effect */
@@ -34,3 +35,10 @@ body {
 </svelte:head>
 
 <Highlight language={css} {code} />
+
+
+<style>
+  .hljs {
+    overflow: hidden;
+  }
+</style>
