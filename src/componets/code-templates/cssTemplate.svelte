@@ -35,10 +35,3 @@ body {
 </svelte:head>
 
 <Highlight language={css} {code} />
-
-
-<style>
-  .hljs {
-    overflow: hidden;
-  }
-</style>
