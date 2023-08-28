@@ -27,9 +27,6 @@
   };
 </script>
 
-
-{backgroundStyles["image"]}
-
 <div
   style={backgroundStyles[$backgroundType]}
   class=" p-8 text-white rounded-md"
