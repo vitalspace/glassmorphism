@@ -33,7 +33,7 @@
       inputType = "color";
       backgroundTypeCssTemplate = "background";
       // backgroundColor = "#17B486";
-    } else if ($backgroundType === "mesh-gradient") {
+    } else if ($backgroundType === "gradient") {
       inputType = "color";
       backgroundTypeCssTemplate = "background";
       isGradientIsActive = true;
@@ -165,7 +165,7 @@
             class="bg-gray-900 border-[1px]"
           >
             <option value="solid">Solid</option>
-            <option value="mesh-gradient">Mesh gradient</option>
+            <option value="gradient">Mesh gradient</option>
             <option value="image">Image</option>
           </select>
         </div>

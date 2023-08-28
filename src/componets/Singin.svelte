@@ -18,7 +18,7 @@
   $: backgroundStyles = {
     solid: "background:" + $backgroundColor + ";",
     image: "background-image:" + `url(${$backgroundImage});`,
-    "mesh-gradient": `
+    gradient: `
       background: ${$backgroundColor}; 
       background-image: 
       radial-gradient(at 47% 33%, ${linerGradientValue1} 0, transparent 59%),  
