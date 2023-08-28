@@ -39,7 +39,8 @@
       isGradientIsActive = true;
     } else {
       inputType = "url";
-      $backgroundImage = `https://media.gq.com.mx/photos/60cf8f0a33c54bdef67610ee/16:9/w_2560%2Cc_limit/paisaje.jpg`;
+      $backgroundImage =
+        "https://media.gq.com.mx/photos/60cf8f0a33c54bdef67610ee/16:9/w_2560%2Cc_limit/paisaje.jpg";
       backgroundTypeCssTemplate = "background-image";
     }
   };
@@ -54,6 +55,10 @@
     // linerGradientValue2 = hexToHSL(linerGradientValue2);
 
     console.log(hexToHSL(linerGradientValue1), hexToHSL(linerGradientValue2));
+  };
+
+  const getImageValue = (e:any) => {
+    $backgroundImage = e.target.value;
   };
 
   const getCardValue = (e: any) => {
@@ -75,6 +80,8 @@
     saturation = e.target.value;
   };
 </script>
+
+{$backgroundType}
 
 <div class="bg-gray-800 place-content-center h-screen font-serif text-gray-300">
   <div class="container flex flex-col mx-auto gap-y-4 xl:px-52">
@@ -111,9 +118,7 @@
         class="flex justify-between items-center border-2 px-2 py-4 bg-gray-900 rounded-sm gap-4"
       >
         <div class="flex flex-col gap-y-2 w-52">
-          <!-- <p class="text-xs">Background color</p> -->
           <label for="">Background color</label>
-          {$backgroundColor}
           {#if $backgroundType === "solid"}
             <input
               class="bg-gray-900 w-full border-[1px]"
@@ -146,7 +151,7 @@
             <input
               class="bg-gray-900 w-full border-[1px]"
               type="url"
-              on:input={(e) => getBackGroundValue(e)}
+              on:input={(e) => getImageValue(e)}
               value="https://media.gq.com.mx/photos/60cf8f0a33c54bdef67610ee/16:9/w_2560%2Cc_limit/paisaje.jpg"
             />
           {/if}

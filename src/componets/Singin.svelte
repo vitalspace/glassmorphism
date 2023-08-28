@@ -5,7 +5,6 @@
     backgroundImage,
   } from "../stores/stores";
 
-  // export let backgroundColor: string = "#17B486";
   export let r: number;
   export let g: number;
   export let b: number;
@@ -27,6 +26,9 @@
     `,
   };
 </script>
+
+
+{backgroundStyles["image"]}
 
 <div
   style={backgroundStyles[$backgroundType]}
