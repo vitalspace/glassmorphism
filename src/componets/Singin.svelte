@@ -1,14 +1,37 @@
 <script lang="ts">
-  export let backgroundColor: string = "#17B486";
+  import {
+    backgroundColor,
+    backgroundType,
+    backgroundImage,
+  } from "../stores/stores";
+
+  // export let backgroundColor: string = "#17B486";
   export let r: number;
   export let g: number;
   export let b: number;
   export let opacity: number;
   export let blur: number;
   export let saturation: number;
+
+  export let linerGradientValue1: string;
+  export let linerGradientValue2: string;
+
+  $: backgroundStyles = {
+    solid: "background:" + $backgroundColor + ";",
+    image: "background-image:" + `url(${$backgroundImage});`,
+    "mesh-gradient": `
+      background: ${$backgroundColor}; 
+      background-image: 
+      radial-gradient(at 47% 33%, ${linerGradientValue1} 0, transparent 59%),  
+      radial-gradient(at 82% 65%, ${linerGradientValue2} 0, transparent 55%)
+    `,
+  };
 </script>
 
-<div style="background: {backgroundColor};" class=" p-8 text-white rounded-md">
+<div
+  style={backgroundStyles[$backgroundType]}
+  class=" p-8 text-white rounded-md"
+>
   <div
     style=" background-color: rgba({r}, {g}, {b}, {opacity});     
     backdrop-filter: blur({blur}px) saturate({saturation}%);
