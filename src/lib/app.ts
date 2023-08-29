@@ -21,6 +21,10 @@ class App {
     const g = parseInt((e.target as HTMLInputElement).value.slice(3, 5), 16);
     const b = parseInt((e.target as HTMLInputElement).value.slice(5, 7), 16);
   }
+
+  getBlurValue(e: Event) {
+    const blur = (e.target as HTMLInputElement).value
+  }
 }
 
 export { App };
