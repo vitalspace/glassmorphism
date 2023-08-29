@@ -23,11 +23,15 @@ class App {
   }
 
   getBlurValue(e: Event) {
-    const blur = (e.target as HTMLInputElement).value
+    const blur = (e.target as HTMLInputElement).value;
   }
 
   getOpacityValue(e: Event) {
     const opacity = (e.target as HTMLInputElement).value;
+  }
+
+  getSaturationValue(e: Event) {
+    const saturation = (e.target as HTMLInputElement).value;
   }
 }
 
