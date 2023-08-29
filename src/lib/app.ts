@@ -1,10 +1,15 @@
-import {
-  backgroundColor,
-  backgroundType,
-  backgroundImage,
-} from "../stores/stores";
+import { backgroundColor, backgroundImage } from "../stores/stores";
 
 class App {
+  r: number = 17;
+  g: number = 25;
+  b: number = 40;
+  blur: number = 10;
+  opacity: number = 0.75;
+  saturation: number = 100;
+  linerGradient1: string = "#5d72b1";
+  linerGradient2: string = "#8a5d28";
+
   constructor() {}
 
   getBackgroundValue(e: Event) {

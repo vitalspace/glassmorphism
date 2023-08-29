@@ -2,7 +2,6 @@
   import Singin from "./componets/Singin.svelte";
   import CssTemplate from "./componets/code-templates/cssTemplate.svelte";
   import { hexToHSL } from "./lib/hexToHsl";
-  import { App } from "./lib/app";
 
   import {
     backgroundColor,
