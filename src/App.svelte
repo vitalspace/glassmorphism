@@ -10,7 +10,6 @@
     backgroundType,
   } from "./stores/stores";
 
-  let cardColor: "#e9e2e2";
   let r: number = 17;
   let g: number = 25;
   let b: number = 40;
@@ -30,7 +29,6 @@
   };
 
   const getCardValue = (e: any) => {
-    cardColor = e.target.value;
     r = parseInt(e.target.value.slice(1, 3), 16);
     g = parseInt(e.target.value.slice(3, 5), 16);
     b = parseInt(e.target.value.slice(5, 7), 16);

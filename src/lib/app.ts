@@ -35,4 +35,6 @@ class App {
   }
 }
 
-export { App };
+const app = new App();
+
+export { app };
