@@ -10,17 +10,17 @@
     backgroundColor,
     backgroundImage,
     backgroundType,
+    r,
+    g,
+    b,
+    blur,
+    opacity,
+    saturation,
+    linerGradient1,
+    linerGradient2
   } from "./stores/stores";
 
-  $:r = app.r;
-  $:g = app.g
-  $:b = app.b;
-  $:blur = app.blur
-  $:opacity = app.opacity;
-  $:saturation = app.saturation;
 
-  $:linerGradient1 = app.linerGradient1;
-  $:linerGradient2 = app.linerGradient2;
 
   const getBackGroundValue = (e: any) => {
     $backgroundColor = e.target.value;
@@ -48,6 +48,9 @@
     saturation = e.target.value;
   };
 </script>
+
+  {blur}
+
 
 <div class="bg-gray-800 place-content-center h-screen font-serif text-gray-300">
   <div class="container flex flex-col mx-auto gap-y-4 xl:px-52">
