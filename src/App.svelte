@@ -10,9 +10,7 @@
     backgroundType,
   } from "./stores/stores";
 
-  // let backgroundColor: any = `url("https://media.gq.com.mx/photos/60cf8f0a33c54bdef67610ee/16:9/w_2560%2Cc_limit/paisaje.jpg")`;
   let cardColor: "#e9e2e2";
-  // let backgroundType = "image";
   let r: number = 17;
   let g: number = 25;
   let b: number = 40;
