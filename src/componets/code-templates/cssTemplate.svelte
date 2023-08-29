@@ -16,8 +16,8 @@
   export let opacity: number;
   export let blur: number;
   export let saturation: number;
-  export let linerGradientValue1: string = "hsl(0, 43%, 39%)";
-  export let linerGradientValue2: string = "hsl(0, 43%, 39%)";
+  export let linerGradient1: string = "hsl(0, 43%, 39%)";
+  export let linerGradient2: string = "hsl(0, 43%, 39%)";
 
   let code: string;
 
@@ -39,8 +39,8 @@
     image: "background-image:" + `url(${$backgroundImage});`,
     gradient: `    background: ${$backgroundColor}; 
     background-image: 
-    radial-gradient(at 47% 33%, ${linerGradientValue1} 0, transparent 59%),  
-    radial-gradient(at 82% 65%, ${linerGradientValue2} 0, transparent 55%)`,
+    radial-gradient(at 47% 33%, ${linerGradient1} 0, transparent 59%),  
+    radial-gradient(at 82% 65%, ${linerGradient2} 0, transparent 55%)`,
   };
 
   $: {

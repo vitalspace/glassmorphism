@@ -27,12 +27,12 @@ class="flex justify-between items-center border-2 px-2 py-4 bg-gray-900 rounded-
       <input
         class="bg-gray-900 border-[1px] w-full"
         type="color"
-        bind:value={linerGradientValue1}
+        bind:value={app.linerGradient1}
       />
       <input
         class="bg-gray-900 border-[1px] w-full"
         type="color"
-        bind:value={linerGradientValue2}
+        bind:value={app.linerGradient2}
       />
     </div>
   {:else}

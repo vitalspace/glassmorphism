@@ -14,8 +14,8 @@
   export let blur: number;
   export let saturation: number;
 
-  export let linerGradientValue1: string;
-  export let linerGradientValue2: string;
+  export let linerGradient1: string;
+  export let linerGradient2: string;
 
   $: backgroundStyles = {
     solid: "background:" + $backgroundColor + ";",
@@ -23,8 +23,8 @@
     gradient: `
       background: ${$backgroundColor}; 
       background-image: 
-      radial-gradient(at 47% 33%, ${linerGradientValue1} 0, transparent 59%),  
-      radial-gradient(at 82% 65%, ${linerGradientValue2} 0, transparent 55%)
+      radial-gradient(at 47% 33%, ${linerGradient1} 0, transparent 59%),  
+      radial-gradient(at 82% 65%, ${linerGradient2} 0, transparent 55%)
     `,
   };
 </script>
