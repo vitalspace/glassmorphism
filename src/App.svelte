@@ -2,6 +2,7 @@
   import Singin from "./componets/Singin.svelte";
   import CssTemplate from "./componets/code-templates/cssTemplate.svelte";
   import { hexToHSL } from "./lib/hexToHsl";
+  import { App } from "./lib/app";
 
   import {
     backgroundColor,
@@ -11,9 +12,7 @@
 
   // let backgroundColor: any = `url("https://media.gq.com.mx/photos/60cf8f0a33c54bdef67610ee/16:9/w_2560%2Cc_limit/paisaje.jpg")`;
   let cardColor: "#e9e2e2";
-  let inputType = "url";
   // let backgroundType = "image";
-  let backgroundTypeCssTemplate = "background-image";
   let r: number = 17;
   let g: number = 25;
   let b: number = 40;
@@ -24,40 +23,11 @@
   let linerGradientValue1: string = "#5d72b1";
   let linerGradientValue2: string = "#8a5d28";
 
-  let isGradientIsActive: boolean = false;
-
-  const getInputTypeValue = () => {
-    isGradientIsActive = false;
-
-    if ($backgroundType === "solid") {
-      inputType = "color";
-      backgroundTypeCssTemplate = "background";
-      // backgroundColor = "#17B486";
-    } else if ($backgroundType === "gradient") {
-      inputType = "color";
-      backgroundTypeCssTemplate = "background";
-      isGradientIsActive = true;
-    } else {
-      inputType = "url";
-      $backgroundImage =
-        "https://media.gq.com.mx/photos/60cf8f0a33c54bdef67610ee/16:9/w_2560%2Cc_limit/paisaje.jpg";
-      backgroundTypeCssTemplate = "background-image";
-    }
-  };
-
   const getBackGroundValue = (e: any) => {
     $backgroundColor = e.target.value;
-    // if (backgroundType === "image") backgroundColor = `url(${e.target.value})`;
   };
 
-  const getGradientValue = () => {
-    // linerGradientValue1 = hexToHSL(linerGradientValue1);
-    // linerGradientValue2 = hexToHSL(linerGradientValue2);
-
-    console.log(hexToHSL(linerGradientValue1), hexToHSL(linerGradientValue2));
-  };
-
-  const getImageValue = (e:any) => {
+  const getImageValue = (e: any) => {
     $backgroundImage = e.target.value;
   };
 
@@ -135,13 +105,11 @@
               <input
                 class="bg-gray-900 border-[1px] w-full"
                 type="color"
-                on:input={(e) => getGradientValue()}
                 bind:value={linerGradientValue1}
               />
               <input
                 class="bg-gray-900 border-[1px] w-full"
                 type="color"
-                on:input={(e) => getGradientValue()}
                 bind:value={linerGradientValue2}
               />
             </div>
@@ -159,7 +127,6 @@
           <label for="">Background type</label>
           <select
             bind:value={$backgroundType}
-            on:change={() => getInputTypeValue()}
             name=""
             id=""
             class="bg-gray-900 border-[1px]"
