@@ -1,15 +1,16 @@
-import { backgroundColor, backgroundType, backgroundImage } from "../stores/stores";
-
+import {
+  backgroundColor,
+  backgroundType,
+  backgroundImage,
+} from "../stores/stores";
 
 class App {
-    constructor() {
+  constructor() {}
 
-    }
-
-    getInputType() {
-
-    }
+  getBackgroundValue(e: Event) {
+    backgroundColor.update((v) => (v = (e.target as HTMLInputElement).value));
+  }
 
 }
 
-export { App }
+export { App };
