@@ -2,20 +2,18 @@
   //@ts-nocheck
 
   import {
+    b,
     backgroundColor,
-    backgroundType,
     backgroundImage,
+    backgroundType,
+    blur,
+    g,
+    linerGradient1,
+    linerGradient2,
+    opacity,
+    r,
+    saturation,
   } from "../stores/stores";
-
-  export let r: number;
-  export let g: number;
-  export let b: number;
-  export let opacity: number;
-  export let blur: number;
-  export let saturation: number;
-
-  export let linerGradient1: string;
-  export let linerGradient2: string;
 
   $: backgroundStyles = {
     solid: "background:" + $backgroundColor + ";",
@@ -23,8 +21,8 @@
     gradient: `
       background: ${$backgroundColor}; 
       background-image: 
-      radial-gradient(at 47% 33%, ${linerGradient1} 0, transparent 59%),  
-      radial-gradient(at 82% 65%, ${linerGradient2} 0, transparent 55%)
+      radial-gradient(at 47% 33%, ${$linerGradient1} 0, transparent 59%),  
+      radial-gradient(at 82% 65%, ${$linerGradient2} 0, transparent 55%)
     `,
   };
 </script>
@@ -34,9 +32,9 @@
   class=" p-8 text-white rounded-md"
 >
   <div
-    style=" background-color: rgba({r}, {g}, {b}, {opacity});     
-    backdrop-filter: blur({blur}px) saturate({saturation}%);
-    -webkit-backdrop-filter: blur({blur}px) saturate({saturation}%);"
+    style=" background-color: rgba({$r}, {$g}, {$b}, {$opacity});     
+    backdrop-filter: blur({$blur}px) saturate({$saturation}%);
+    -webkit-backdrop-filter: blur({$blur}px) saturate({$saturation}%);"
     class="px-6 py-4 rounded-md"
   >
     <header>

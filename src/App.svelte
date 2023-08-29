@@ -2,55 +2,7 @@
   import Singin from "./componets/Singin.svelte";
   import CssTemplate from "./componets/code-templates/cssTemplate.svelte";
   import Form from "./componets/ui/form.svelte";
-
-  import { app } from "./lib/app";
-  import { hexToHSL } from "./lib/hexToHsl";
-
-  import {
-    backgroundColor,
-    backgroundImage,
-    backgroundType,
-    r,
-    g,
-    b,
-    blur,
-    opacity,
-    saturation,
-    linerGradient1,
-    linerGradient2
-  } from "./stores/stores";
-
-
-
-  const getBackGroundValue = (e: any) => {
-    $backgroundColor = e.target.value;
-  };
-
-  const getImageValue = (e: any) => {
-    $backgroundImage = e.target.value;
-  };
-
-  const getCardValue = (e: any) => {
-    r = parseInt(e.target.value.slice(1, 3), 16);
-    g = parseInt(e.target.value.slice(3, 5), 16);
-    b = parseInt(e.target.value.slice(5, 7), 16);
-  };
-
-  const getBlurValue = (e: any) => {
-    blur = e.target.value;
-  };
-
-  const getOpacityValue = (e: any) => {
-    opacity = e.target.value;
-  };
-
-  const getSaturationValue = (e: any) => {
-    saturation = e.target.value;
-  };
 </script>
-
-  {blur}
-
 
 <div class="bg-gray-800 place-content-center h-screen font-serif text-gray-300">
   <div class="container flex flex-col mx-auto gap-y-4 xl:px-52">
@@ -98,16 +50,7 @@
             </div>
           </div>
           <div class="mx-2 mb-2">
-            <Singin
-              {r}
-              {g}
-              {b}
-              {opacity}
-              {blur}
-              {saturation}
-              linerGradient1={hexToHSL(linerGradient1)}
-              linerGradient2={hexToHSL(linerGradient2)}
-            />
+            <Singin/>
           </div>
         </div>
 
@@ -123,16 +66,7 @@
           </div>
 
           <div class="break-words">
-            <CssTemplate
-              {r}
-              {g}
-              {b}
-              {opacity}
-              {blur}
-              {saturation}
-              linerGradient1={hexToHSL(linerGradient1)}
-              linerGradient2={hexToHSL(linerGradient2)}
-            />
+            <CssTemplate/>
           </div>
         </div>
       </div>

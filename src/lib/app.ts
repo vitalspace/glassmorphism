@@ -1,15 +1,12 @@
 import {
+  b,
   backgroundColor,
   backgroundImage,
-  backgroundType,
-  r,
-  g,
-  b,
   blur,
+  g,
   opacity,
-  saturation,
-  linerGradient1,
-  linerGradient2
+  r,
+  saturation
 } from "../stores/stores";
 
 class App {
@@ -35,7 +32,7 @@ class App {
   }
 
   getOpacityValue(e: Event) {
-    opacity.update(v => v = parseInt((e.target as HTMLInputElement).value));
+    opacity.update(v => v = parseFloat((e.target as HTMLInputElement).value));
   }
 
   getSaturationValue(e: Event) {
@@ -46,3 +43,4 @@ class App {
 const app = new App();
 
 export { app };
+
