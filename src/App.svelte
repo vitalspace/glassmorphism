@@ -261,7 +261,6 @@
               {opacity}
               {blur}
               {saturation}
-              {isGradientIsActive}
               linerGradientValue1={hexToHSL(linerGradientValue1)}
               linerGradientValue2={hexToHSL(linerGradientValue2)}
             />

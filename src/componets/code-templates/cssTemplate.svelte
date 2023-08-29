@@ -1,4 +1,6 @@
 <script lang="ts">
+  //@ts-nocheck
+
   import Highlight from "svelte-highlight";
   import css from "svelte-highlight/languages/css";
   import a11yDark from "svelte-highlight/styles/a11y-dark";
@@ -19,7 +21,7 @@
 
   let code: string;
 
-  function getCardStyles(blur, saturation, r, g, b, opacity) {
+  function getCardStyles(blur:number, saturation:number, r:number, g:number, b:number, opacity:number) {
     return `
 /* Glassmorphism card effect */
   .card {
