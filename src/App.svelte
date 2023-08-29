@@ -124,7 +124,7 @@
               on:input={(e) => getBackGroundValue(e)}
               bind:value={$backgroundColor}
             />
-          {:else if $backgroundType === "mesh-gradient"}
+          {:else if $backgroundType === "gradient"}
             <div class="flex gap-2">
               <input
                 class="bg-gray-900 border-[1px] w-full"
@@ -255,7 +255,6 @@
 
           <div class="break-words">
             <CssTemplate
-              backgroundType={backgroundTypeCssTemplate}
               {r}
               {g}
               {b}
