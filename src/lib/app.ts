@@ -21,7 +21,6 @@ class App {
   }
 
   getCardBackgroundValue(e: Event) {
-    // const cardColor = (e.target as HTMLInputElement).value;
     r.update(v => v = parseInt((e.target as HTMLInputElement).value.slice(1, 3), 16));
     g.update(v => v = parseInt((e.target as HTMLInputElement).value.slice(3, 5), 16));
     b.update(v => v = parseInt((e.target as HTMLInputElement).value.slice(5, 7), 16));
