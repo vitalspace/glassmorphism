@@ -11,6 +11,10 @@ class App {
     backgroundColor.update((v) => (v = (e.target as HTMLInputElement).value));
   }
 
+  getImageValue(e: Event) {
+    backgroundImage.update((v) => (v = (e.target as HTMLInputElement).value));
+  }
+
 }
 
 export { App };
