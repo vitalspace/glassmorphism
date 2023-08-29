@@ -94,7 +94,7 @@
         </div>
 
         <div>
-          <a href="_" class="text-sm text-blue-500 hover:underline"
+          <a href="#" class="text-sm text-blue-500 hover:underline"
             >Forgot password?</a
           >
         </div>
@@ -105,7 +105,7 @@
       >
 
       <p class="mt-4 text-center text-sm text-gray-500">
-        Not registered? <a href="_" class="text-blue-500 hover:underline"
+        Not registered? <a href="#" class="text-blue-500 hover:underline"
           >Create account</a
         >
       </p>
