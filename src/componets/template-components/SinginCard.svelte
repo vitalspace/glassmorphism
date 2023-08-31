@@ -13,7 +13,7 @@
     opacity,
     r,
     saturation,
-  } from "../stores/stores";
+  } from "../../stores/stores";
 
   $: backgroundStyles = {
     solid: "background:" + $backgroundColor + ";",

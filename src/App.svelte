@@ -1,9 +1,22 @@
 <script lang="ts">
-  import Singin from "./componets/Singin.svelte";
+  import SinginCard from "./componets/template-components/SinginCard.svelte";
+  import ProfileCard from "./componets/template-components/ProfileCard.svelte";
   import CssTemplate from "./componets/code-templates/cssTemplate.svelte";
   import Form from "./componets/ui/form.svelte";
   import { componentType } from "./stores/stores";
 
+  let items = [
+    {
+      id: 1,
+      label: "singin-card",
+      component: SinginCard,
+    },
+    {
+      id: 2,
+      label: "profile-card",
+      component: ProfileCard,
+    },
+  ];
 </script>
 
 <div class="bg-gray-800 place-content-center h-screen font-serif text-gray-300">
@@ -37,15 +50,17 @@
     </section>
 
     <section class="flex flex-col gap-y-4">
-      <Form/>
-
-      {$componentType}
-
+      <Form />
       <div class="xl:grid grid-cols-2 gap-4 flex flex-col">
         <div class="flex flex-col border-2 rounded-sm">
           <div class="flex justify-between items-center p-2">
-            <select bind:value={$componentType} name="" id="" class="bg-gray-900">
-              <option value="member-card">Member card</option>
+            <select
+              bind:value={$componentType}
+              name=""
+              id=""
+              class="bg-gray-900"
+            >
+              <option value="singin-card">Singin card</option>
               <option value="profile-card">Profile card</option>
               <option value="pricing-card">Pricing card</option>
             </select>
@@ -54,7 +69,11 @@
             </div>
           </div>
           <div class="mx-2 mb-2">
-            <Singin/>
+            {#each items as item}
+              {#if $componentType === item.label}
+                <svelte:component this={item.component} />
+              {/if}
+            {/each}
           </div>
         </div>
 
@@ -63,14 +82,12 @@
             <div>
               <button>Css</button>
             </div>
-
             <div>
               <button>Copy</button>
             </div>
           </div>
-
           <div class="break-words">
-            <CssTemplate/>
+            <CssTemplate />
           </div>
         </div>
       </div>
