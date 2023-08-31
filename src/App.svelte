@@ -2,6 +2,8 @@
   import Singin from "./componets/Singin.svelte";
   import CssTemplate from "./componets/code-templates/cssTemplate.svelte";
   import Form from "./componets/ui/form.svelte";
+  import { componentType } from "./stores/stores";
+
 </script>
 
 <div class="bg-gray-800 place-content-center h-screen font-serif text-gray-300">
@@ -37,10 +39,12 @@
     <section class="flex flex-col gap-y-4">
       <Form/>
 
-      <div class="xl:grid grid-cols-2 gap-4 flex flex-wrap">
+      {$componentType}
+
+      <div class="xl:grid grid-cols-2 gap-4 flex flex-col">
         <div class="flex flex-col border-2 rounded-sm">
           <div class="flex justify-between items-center p-2">
-            <select name="" id="" class="bg-gray-900">
+            <select bind:value={$componentType} name="" id="" class="bg-gray-900">
               <option value="member-card">Member card</option>
               <option value="profile-card">Profile card</option>
               <option value="pricing-card">Pricing card</option>

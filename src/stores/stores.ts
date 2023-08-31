@@ -1,5 +1,6 @@
 import { writable } from "svelte/store";
 
+export const componentType = writable("profile-card");
 export const backgroundColor = writable("#64cea5");
 export const backgroundType = writable("image");
 export const backgroundImage = writable(
@@ -14,4 +15,3 @@ export const backgroundImage = writable(
   export const saturation = writable(100);
   export const linerGradient1 = writable("#5d72b1");
   export const linerGradient2 = writable("#8a5d28");
-  
