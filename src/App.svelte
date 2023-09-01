@@ -1,28 +1,8 @@
 <script lang="ts">
-  import SinginCard from "./componets/template-components/SinginCard.svelte";
-  import ProfileCard from "./componets/template-components/ProfileCard.svelte";
-  import CollectionsCard from "./componets//template-components/Collections.svelte";
   import CssTemplate from "./componets/code-templates/cssTemplate.svelte";
   import Form from "./componets/ui/form.svelte";
+  import { componentsList } from "./lib/componentsList";
   import { componentType } from "./stores/stores";
-
-  let items = [
-    {
-      id: 1,
-      label: "singin-card",
-      component: SinginCard,
-    },
-    {
-      id: 2,
-      label: "profile-card",
-      component: ProfileCard,
-    },
-    {
-      id: 3,
-      label: "collections-card",
-      component: CollectionsCard,
-    },
-  ];
 </script>
 
 <div class="bg-gray-800 place-content-center h-screen font-serif text-gray-300">
@@ -75,7 +55,7 @@
             </div>
           </div>
           <div class="mx-2 mb-2">
-            {#each items as item}
+            {#each componentsList as item}
               {#if $componentType === item.label}
                 <svelte:component this={item.component} />
               {/if}
