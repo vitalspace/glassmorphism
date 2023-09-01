@@ -38,7 +38,6 @@ class App {
     saturation.update(v => v = parseInt((e.target as HTMLInputElement).value));
   }
 
-  changeComponent(e: Event)
 }
 
 const app = new App();
