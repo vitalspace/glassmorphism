@@ -29,7 +29,7 @@
 
 <div
   style={backgroundStyles[$backgroundType]}
-  class=" p-8 text-white rounded-md font-sans"
+  class="p-8 text-white rounded-md font-sans"
 >
   <div
     style=" background-color: rgba({$r}, {$g}, {$b}, {$opacity});     
@@ -77,4 +77,3 @@
     </footer>
   </div>
 </div>
-

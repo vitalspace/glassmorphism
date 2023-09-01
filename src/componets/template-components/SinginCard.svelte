@@ -35,7 +35,7 @@
     style=" background-color: rgba({$r}, {$g}, {$b}, {$opacity});     
     backdrop-filter: blur({$blur}px) saturate({$saturation}%);
     -webkit-backdrop-filter: blur({$blur}px) saturate({$saturation}%);"
-    class="px-6 py-4 rounded-md"
+    class="px-6 py-6 rounded-md"
   >
     <header>
       <h2 class="text-3xl font-bold">Sign In</h2>

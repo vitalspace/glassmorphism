@@ -1,6 +1,7 @@
 <script lang="ts">
   import SinginCard from "./componets/template-components/SinginCard.svelte";
   import ProfileCard from "./componets/template-components/ProfileCard.svelte";
+  import CollectionsCard from "./componets//template-components/Collections.svelte";
   import CssTemplate from "./componets/code-templates/cssTemplate.svelte";
   import Form from "./componets/ui/form.svelte";
   import { componentType } from "./stores/stores";
@@ -15,6 +16,11 @@
       id: 2,
       label: "profile-card",
       component: ProfileCard,
+    },
+    {
+      id: 3,
+      label: "collections-card",
+      component: CollectionsCard,
     },
   ];
 </script>
@@ -62,7 +68,7 @@
             >
               <option value="singin-card">Singin card</option>
               <option value="profile-card">Profile card</option>
-              <option value="pricing-card">Pricing card</option>
+              <option value="collections-card">Collections card</option>
             </select>
             <div>
               <button>Change me</button>
