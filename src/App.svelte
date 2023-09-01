@@ -3,6 +3,9 @@
   import Form from "./componets/ui/form.svelte";
   import { componentsList } from "./lib/componentsList";
   import { componentType } from "./stores/stores";
+  import SinginTemplate from "./componets/code-templates/singinTemplate.svelte";
+
+
 </script>
 
 <div class="bg-gray-800 place-content-center h-screen font-serif text-gray-300">
@@ -73,7 +76,7 @@
             </div>
           </div>
           <div class="break-words">
-            <CssTemplate />
+            <SinginTemplate />
           </div>
         </div>
       </div>
