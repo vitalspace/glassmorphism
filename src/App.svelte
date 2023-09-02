@@ -1,9 +1,10 @@
 <script lang="ts">
-  import CssTemplate from "./componets/code-templates/cssTemplate.svelte";
+  import CssTemplate from "./componets/code-templates/CssTemplate.svelte";
   import Form from "./componets/ui/form.svelte";
   import { componentsList } from "./lib/componentsList";
   import { componentType } from "./stores/stores";
-  import SinginTemplate from "./componets/code-templates/singinTemplate.svelte";
+  import SinginTemplate from "./componets/code-templates/SinginTemplate.svelte";
+  import CollectionsTemplate  from "./componets/code-templates/CollectionsTemplate.svelte";
 
 
 </script>
@@ -76,7 +77,7 @@
             </div>
           </div>
           <div class="break-words">
-            <SinginTemplate />
+            <CollectionsTemplate />
           </div>
         </div>
       </div>

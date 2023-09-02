@@ -26,7 +26,7 @@
     gradient: `background: ${$backgroundColor}; background-image: radial-gradient(at 47% 33%, ${$linerGradient1} 0, transparent 59%), radial-gradient(at 82% 65%, ${$linerGradient2} 0, transparent 55%);`,
   };
   $: code = `<div style="${backgroundStyles[$backgroundType]}" class="rounded-md p-8 text-white h-screen grid place-items-center">
-  <div class="bg-[rgba(${$r},${$g},${$b},${$opacity})] backdrop-blur-[${$blur}px] backdrop-saturate-[${$saturation}%] rounded-md px-6 py-6 w-1/4">
+  <div class="bg-[rgba(${$r},${$g},${$b},${$opacity})] backdrop-blur-[${$blur}px] backdrop-saturate-[${$saturation}%] rounded-md px-6 py-6 w-full xl:w-1/4">
     <header>
       <h2 class="text-3xl font-bold">Sign In</h2>
       <p class="text-sm text-gray-500">Please sign in to continue</p>
