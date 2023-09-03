@@ -1,6 +1,7 @@
 import { writable } from "svelte/store";
 
 export const componentType = writable("collections-card");
+export const currentClickBoardValue = writable("")
 export const backgroundColor = writable("#64cea5");
 export const backgroundType = writable("image");
 export const backgroundImage = writable(

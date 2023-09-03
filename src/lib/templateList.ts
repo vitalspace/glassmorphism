@@ -4,12 +4,12 @@ import ConllectionsTemplate from "../componets/code-templates/CollectionsTemplat
 let templateList = [
   {
     id: 1,
-    label: "singinTemplate",
+    label: "singin-card",
     component: SinginTemplate,
   },
   {
     id: 2,
-    label: "collectionsTemplate",
+    label: "collections-card",
     component: ConllectionsTemplate,
   },
 ];

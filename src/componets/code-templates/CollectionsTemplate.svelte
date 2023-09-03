@@ -25,7 +25,7 @@
     image: "background-image:" + `url(${$backgroundImage});`,
     gradient: `background: ${$backgroundColor}; background-image: radial-gradient(at 47% 33%, ${$linerGradient1} 0, transparent 59%), radial-gradient(at 82% 65%, ${$linerGradient2} 0, transparent 55%);`,
   };
-    $: code = `<div style="${backgroundStyles[$backgroundType]}" class="grid h-screen place-items-center rounded-md p-8 font-sans text-white">
+    $: code = `<div style="${backgroundStyles[$backgroundType]}" class="grid h-screen place-items-center rounded-md p-8 font-sans text-white bg-cover">
   <div class="flex w-full xl:w-1/4 flex-col gap-y-6 rounded-md px-6 py-6 bg-[rgba(${$r},${$g},${$b},${$opacity})] backdrop-blur-[${$blur}px] backdrop-saturate-[${$saturation}%]">
     <div class="h-40 rounded-md bg-[url('https://c4.wallpaperflare.com/wallpaper/410/867/750/vector-forest-sunset-forest-sunset-forest-wallpaper-preview.jpg')] bg-cover"></div>
     <div class="flex justify-between gap-6">
@@ -41,10 +41,7 @@
       </div>
     </footer>
   </div>
-</div>
-
-
-  `;
+</div>`;
   </script>
   
   <svelte:head>

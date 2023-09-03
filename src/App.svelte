@@ -2,11 +2,10 @@
   import CssTemplate from "./componets/code-templates/CssTemplate.svelte";
   import Form from "./componets/ui/form.svelte";
   import { componentsList } from "./lib/componentsList";
+  import { templateList } from "./lib/templateList";
   import { componentType } from "./stores/stores";
   import SinginTemplate from "./componets/code-templates/SinginTemplate.svelte";
-  import CollectionsTemplate  from "./componets/code-templates/CollectionsTemplate.svelte";
-
-
+  import CollectionsTemplate from "./componets/code-templates/CollectionsTemplate.svelte";
 </script>
 
 <div class="bg-gray-800 place-content-center h-screen font-serif text-gray-300">
@@ -68,16 +67,21 @@
         </div>
 
         <div class="border-2 rounded-sm">
-          <div class="flex justify-between p-2">
-            <div>
+          <!-- <div class="flex justify-between p-2"> -->
+            <!-- <div>
               <button>Css</button>
             </div>
             <div>
               <button>Copy</button>
             </div>
-          </div>
-          <div class="break-words">
-            <CollectionsTemplate />
+          </div> -->
+          <div>
+            <!-- <CollectionsTemplate /> -->
+            {#each templateList as item}
+              {#if $componentType === item.label}
+                <svelte:component this={item.component} />
+              {/if}
+            {/each}
           </div>
         </div>
       </div>
