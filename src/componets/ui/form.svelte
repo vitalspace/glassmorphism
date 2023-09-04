@@ -79,7 +79,7 @@
   </div>
 
   <div class="flex flex-col gap-y-2">
-    <label for="">Blur value <span>{$blur}px</span></label>
+    <label for="">Blur value <span class="text-[lime]">{$blur}px</span></label>
     <input
       on:input={(e) => app.getBlurValue(e)}
       min="0"
@@ -90,7 +90,7 @@
   </div>
 
   <div class="flex flex-col gap-y-2">
-    <label for="">Opacity <span>{$opacity}</span></label>
+    <label for="">Opacity <span class="text-[lime]">{$opacity}</span></label>
     <input
       on:input={(e) => app.getOpacityValue(e)}
       min="0"
@@ -102,7 +102,7 @@
   </div>
 
   <div class="flex flex-col gap-y-2">
-    <label for="">Saturation <span>{$saturation}%</span></label>
+    <label for="">Saturation <span class="text-[lime]">{$saturation}%</span></label>
     <input
       on:input={(e) => app.getSaturationValue(e)}
       min="0"

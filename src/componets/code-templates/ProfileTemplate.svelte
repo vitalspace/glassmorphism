@@ -26,9 +26,7 @@
     backdrop-filter: blur(${$blur}px) saturate(${$saturation}%);
     -webkit-backdrop-filter: blur(${$blur}px) saturate(${$saturation}%);
     background-color: rgba(${$r}, ${$g}, ${$b}, ${$opacity});
-    border-radius: 12px; 
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    box-shadow: 0px 0px 5px 5px #ccc;
+    border-radius: 0.375rem; 
   }`,
   };
 

@@ -52,9 +52,9 @@
               <option value="profile-card">Profile card</option>
               <option value="collections-card">Collections card</option>
             </select>
-            <div>
+            <!-- <div>
               <button>Change me</button>
-            </div>
+            </div> -->
           </div>
           <div class="mx-2 mb-2">
             {#each componentsList as item}
