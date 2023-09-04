@@ -1,8 +1,6 @@
 <script lang="ts">
   //@ts-nocheck
-
   import ChoseCode from "../ui/choseCode.svelte";
-
 
   import {
     b,
