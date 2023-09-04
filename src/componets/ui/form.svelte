@@ -7,8 +7,7 @@
     linerGradient2,
     blur,
     opacity,
-    saturation
-
+    saturation,
   } from "../../stores/stores";
 </script>
 
@@ -81,6 +80,7 @@
   <div class="flex flex-col gap-y-2">
     <label for="">Blur value <span class="text-[lime]">{$blur}px</span></label>
     <input
+      class="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 [&::-webkit-slider-thumb]:bg-purple-800 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full"
       on:input={(e) => app.getBlurValue(e)}
       min="0"
       max="25"
@@ -92,6 +92,7 @@
   <div class="flex flex-col gap-y-2">
     <label for="">Opacity <span class="text-[lime]">{$opacity}</span></label>
     <input
+      class="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 [&::-webkit-slider-thumb]:bg-purple-800 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full"
       on:input={(e) => app.getOpacityValue(e)}
       min="0"
       max="1"
@@ -102,8 +103,11 @@
   </div>
 
   <div class="flex flex-col gap-y-2">
-    <label for="">Saturation <span class="text-[lime]">{$saturation}%</span></label>
+    <label for=""
+      >Saturation <span class="text-[lime]">{$saturation}%</span></label
+    >
     <input
+      class="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 [&::-webkit-slider-thumb]:bg-purple-800 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full"
       on:input={(e) => app.getSaturationValue(e)}
       min="0"
       max="200"
