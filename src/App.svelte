@@ -37,16 +37,16 @@
       </footer>
     </section>
 
-    <section class="flex flex-col gap-y-4">
+    <section class="flex flex-col gap-y-6">
       <Form />
-      <div class="xl:grid grid-cols-2 gap-4 flex flex-col">
-        <div class="flex flex-col border-2 rounded-sm">
-          <div class="flex justify-between items-center p-2">
+      <div class="xl:grid grid-cols-2 gap-6 flex flex-col">
+        <div class="flex flex-col border-[1px] border-gray-600 bg-gray-900 gap-y-4 px-4 py-6 rounded-md">
+          <div class="flex justify-between items-center px-2">
             <select
               bind:value={$componentType}
               name=""
               id=""
-              class="bg-gray-900"
+              class="bg-gray-800 py-1 outline-none border-gray-600"
             >
               <option value="singin-card">Singin card</option>
               <option value="profile-card">Profile card</option>
@@ -65,7 +65,7 @@
           </div>
         </div>
 
-        <div class="border-2 rounded-sm">
+        <div class="border-[1px] border-gray-600 bg-gray-900 rounded-md">
           {#each templateList as item}
             {#if $componentType === item.label}
               <svelte:component this={item.component} />

@@ -4,18 +4,22 @@
     backgroundColor,
     backgroundType,
     linerGradient1,
-    linerGradient2
+    linerGradient2,
+    blur,
+    opacity,
+    saturation
+
   } from "../../stores/stores";
 </script>
 
 <form
-  class="flex justify-between items-center border-2 px-2 py-4 bg-gray-900 rounded-sm gap-4"
+  class="flex justify-between items-center border-[1px] border-gray-600 px-6 py-4 bg-gray-900 rounded-sm gap-4"
 >
   <div class="flex flex-col gap-y-2 w-52">
     <label for="">Background color</label>
     {#if $backgroundType === "solid"}
       <input
-        class="bg-gray-900 w-full border-[1px]"
+        class="bg-gray-800 w-full border-[1px] border-gray-600 h-[1.9em] outline-none"
         type="color"
         on:input={(e) => app.getBackgroundValue(e)}
         bind:value={$backgroundColor}
@@ -23,25 +27,25 @@
     {:else if $backgroundType === "gradient"}
       <div class="flex gap-2">
         <input
-          class="bg-gray-900 border-[1px] w-full"
+          class="bg-gray-800 w-full border-[1px] border-gray-600 h-[1.9em] outline-none"
           type="color"
           on:input={(e) => app.getBackgroundValue(e)}
           bind:value={$backgroundColor}
         />
         <input
-          class="bg-gray-900 border-[1px] w-full"
+          class="bg-gray-800 w-full border-[1px] border-gray-600 h-[1.9em] outline-none"
           type="color"
           bind:value={$linerGradient1}
         />
         <input
-          class="bg-gray-900 border-[1px] w-full"
+          class="bg-gray-800 w-full border-[1px] border-gray-600 h-[1.9em] outline-none"
           type="color"
           bind:value={$linerGradient2}
         />
       </div>
     {:else}
       <input
-        class="bg-gray-900 w-full border-[1px]"
+        class="bg-gray-800 w-full border-[1px] border-gray-600 h-[1.9em] py-1 outline-none"
         type="url"
         on:input={(e) => app.getImageValue(e)}
         value="https://media.gq.com.mx/photos/60cf8f0a33c54bdef67610ee/16:9/w_2560%2Cc_limit/paisaje.jpg"
@@ -55,7 +59,7 @@
       bind:value={$backgroundType}
       name=""
       id=""
-      class="bg-gray-900 border-[1px]"
+      class="bg-gray-800 py-1 outline-none border-[1px] border-gray-600"
     >
       <option value="solid">Solid</option>
       <option value="gradient">Mesh gradient</option>
@@ -68,14 +72,14 @@
     <label for="">Card color</label>
     <input
       on:input={(e) => app.getCardBackgroundValue(e)}
-      class="bg-gray-900 w-full"
+      class="bg-gray-800 w-full border-[1px] border-gray-600 h-[1.9em] outline-none"
       type="color"
       value="#111928"
     />
   </div>
 
   <div class="flex flex-col gap-y-2">
-    <label for="">Blur value</label>
+    <label for="">Blur value <span>{$blur}px</span></label>
     <input
       on:input={(e) => app.getBlurValue(e)}
       min="0"
@@ -86,7 +90,7 @@
   </div>
 
   <div class="flex flex-col gap-y-2">
-    <label for="">Opacity</label>
+    <label for="">Opacity <span>{$opacity}</span></label>
     <input
       on:input={(e) => app.getOpacityValue(e)}
       min="0"
@@ -98,7 +102,7 @@
   </div>
 
   <div class="flex flex-col gap-y-2">
-    <label for="">Saturation</label>
+    <label for="">Saturation <span>{$saturation}%</span></label>
     <input
       on:input={(e) => app.getSaturationValue(e)}
       min="0"
