@@ -123,19 +123,20 @@
 <svelte:head>
   {@html a11yDark}
 </svelte:head>
+
 <div class="flex justify-between p-2">
   <div class="flex gap-4">
     {#each typeContent as item}
       <button
         class={activeTabValue === item.label
           ? "bg-purple-800 text-white px-4 rounded-sm transition-all"
-          : "bg-none px-4 hover:bg-purple-400 hover:text-white rounded-sm transition-all"}
+          : "bg-none px-4 hover:bg-gray-900 hover:text-white rounded-sm transition-all"}
         on:click={handleClick(item.label)}>{item.label}</button
       >
     {/each}
   </div>
   <div>
-    <button on:click={() => copyClipBoard(typeContent, activeTabValue)}
+    <button class="px-2 bg-gray-900 rounded-sm hover:bg-purple-800 transition-all" on:click={() => copyClipBoard(typeContent, activeTabValue)}
       >Copy</button
     >
   </div>
