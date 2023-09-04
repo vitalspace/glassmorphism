@@ -29,7 +29,7 @@
     card: `
 /* Glassmorphism card effect */
   .card {
-    backdrop-filter: blur(16px) saturate(180%);
+    backdrop-filter: blur(${$blur}px) saturate(${$saturation}%);
     -webkit-backdrop-filter: blur(${$blur}px) saturate(${$saturation}%);
     background-color: rgba(${$r}, ${$g}, ${$b}, ${$opacity});
     border-radius: 12px; 
