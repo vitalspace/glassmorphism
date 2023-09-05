@@ -51,7 +51,7 @@
         >
           <img
             class="w-9 h-9 px-2 border-r rounded-l-md"
-            src="sms-svgrepo-com.svg"
+            src="icons/sms-svgrepo-com.svg"
             alt=""
           />
 
@@ -72,7 +72,7 @@
         >
           <img
             class="w-9 h-9 px-2 border-r rounded-l-md"
-            src="lock-alt-svgrepo-com.svg"
+            src="icons/lock-alt-svgrepo-com.svg"
             alt=""
           />
 

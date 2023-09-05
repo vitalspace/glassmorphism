@@ -57,7 +57,7 @@
         <p class="text-2xl text-[#908ee3]">Hostory</p>
       </div>
       <div class="flex items-center gap-2">
-        <img class="w-6 h-6" src="img-box-svgrepo-com.svg" alt="" />
+        <img class="w-6 h-6" src="icons/img-box-svgrepo-com.svg" alt="" />
         <p class="text-[#908ee3]">432</p>
       </div>
     </footer>
