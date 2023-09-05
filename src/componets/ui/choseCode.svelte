@@ -1,21 +1,24 @@
 <script lang="ts">
-  export let typeContent;
-  export let activeTabValue;
-  export let height;
+
+  export let typeContent: any;
+  export let activeTabValue:any;
+  export let height:any;
 
   import Highlight from "svelte-highlight";
   import cssStyle from "svelte-highlight/languages/css";
   import vbscriptHtml from "svelte-highlight/languages/vbscript-html";
+  import javascript from "svelte-highlight/languages/javascript";
+  import typescript from "svelte-highlight/languages/typescript";
   import a11yDark from "svelte-highlight/styles/a11y-dark";
   import { copyClipBoard } from "../../lib/copyClipBoard";
 
-  const handleClick = (tabValue) => () => (activeTabValue = tabValue);
+  const handleClick = (tabValue:string) => () => (activeTabValue = tabValue);
 </script>
+
 
 <svelte:head>
   {@html a11yDark}
 </svelte:head>
-
 <section class="flex flex-col gap-y-3 p-6">
   <div class="flex justify-between items-center">
     <div class="flex gap-4">
@@ -40,7 +43,7 @@
     {#each typeContent as item}
       {#if activeTabValue === item.label}
         {#if item.label !== "Css"}
-          <Highlight language={vbscriptHtml} code={item.content} />
+          <Highlight language={cssStyle} code={item.content} />
         {:else}
           <Highlight language={cssStyle} code={item.content} />
         {/if}

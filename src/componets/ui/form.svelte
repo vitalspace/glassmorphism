@@ -12,9 +12,9 @@
 </script>
 
 <form
-  class="flex justify-between items-center border-[1px] border-gray-600 px-6 py-4 bg-gray-900 rounded-sm gap-4"
+  class="flex flex-col md:flex-row justify-between items-center border-[1px] border-gray-600 px-6 py-4 bg-gray-900 rounded-sm gap-4"
 >
-  <div class="flex flex-col gap-y-2 w-52">
+  <div class="flex flex-col w-full gap-y-2 ">
     <label for="">Background color</label>
     {#if $backgroundType === "solid"}
       <input
@@ -44,7 +44,7 @@
       </div>
     {:else}
       <input
-        class="bg-gray-800 w-full border-[1px] border-gray-600 h-[1.9em] py-1 outline-none"
+        class="bg-gray-800 w-full border-[1px] border-gray-600 h-[1.9em] py-1 outline-none px-2"
         type="url"
         on:input={(e) => app.getImageValue(e)}
         value="https://media.gq.com.mx/photos/60cf8f0a33c54bdef67610ee/16:9/w_2560%2Cc_limit/paisaje.jpg"
@@ -52,7 +52,7 @@
     {/if}
   </div>
 
-  <div class="flex flex-col gap-y-2">
+  <div class="flex flex-col gap-y-2 w-full">
     <label for="">Background type</label>
     <select
       bind:value={$backgroundType}
@@ -66,7 +66,7 @@
     </select>
   </div>
 
-  <div class="flex flex-col gap-y-2">
+  <div class="flex flex-col gap-y-2 w-full">
     <!-- <p class="text-xs">Background color</p> -->
     <label for="">Card color</label>
     <input
@@ -77,7 +77,7 @@
     />
   </div>
 
-  <div class="flex flex-col gap-y-2">
+  <div class="flex flex-col gap-y-2 w-full">
     <label for="">Blur value <span class="text-[lime]">{$blur}px</span></label>
     <input
       class="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 [&::-webkit-slider-thumb]:bg-purple-800 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full"
@@ -89,7 +89,7 @@
     />
   </div>
 
-  <div class="flex flex-col gap-y-2">
+  <div class="flex flex-col gap-y-2 w-full">
     <label for="">Opacity <span class="text-[lime]">{$opacity}</span></label>
     <input
       class="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 [&::-webkit-slider-thumb]:bg-purple-800 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full"
@@ -102,7 +102,7 @@
     />
   </div>
 
-  <div class="flex flex-col gap-y-2">
+  <div class="flex flex-col gap-y-2 w-full">
     <label for=""
       >Saturation <span class="text-[lime]">{$saturation}%</span></label
     >
