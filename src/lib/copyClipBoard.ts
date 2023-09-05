@@ -1,5 +1,10 @@
-//@ts-nocheck
-const copyClipBoard = (typeContent: [], activeTabValue:string) => {
+// @ts-nocheck
+const copyClipBoard = (typeContent: [], activeTabValue:string, e:Event) => {
+    e.target.textContent = "Copied"   
+    setTimeout(() => {
+      e.target.textContent = "Copy"   
+    }, 2000);
+
     typeContent.forEach((element) => {
       if (element.label === activeTabValue) {
         const textarea = document.createElement("textarea");

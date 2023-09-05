@@ -30,8 +30,8 @@
     </div>
     <div>
       <button
-        class="px-2 py-1 bg-gray-900 rounded-sm hover:bg-purple-800 transition-all"
-        on:click={() => copyClipBoard(typeContent, activeTabValue)}>Copy</button
+        class="px-2 py-1 bg-gray-800 rounded-sm hover:bg-purple-800 transition-all"
+        on:click={(e) => copyClipBoard(typeContent, activeTabValue, e)}>Copy</button
       >
     </div>
   </div>

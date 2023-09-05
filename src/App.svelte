@@ -46,7 +46,7 @@
               bind:value={$componentType}
               name=""
               id=""
-              class="bg-gray-800 py-1 outline-none border-gray-600"
+              class="bg-gray-800 py-1 outline-none border-[1px] border-gray-600"
             >
               <option value="singin-card">Singin card</option>
               <option value="profile-card">Profile card</option>
