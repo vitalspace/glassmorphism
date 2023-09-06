@@ -1,6 +1,7 @@
 import SinginTemplate from "../componets/code-templates/SinginTemplate.svelte";
 import ConllectionsTemplate from "../componets/code-templates/CollectionsTemplate.svelte";
 import ProfileCard from "../componets/code-templates/ProfileTemplate.svelte";
+import StoresListCard from "../componets/code-templates/StoresListTemplate.svelte";
 
 let templateList = [
   {
@@ -18,6 +19,11 @@ let templateList = [
     label: "collections-card",
     component: ConllectionsTemplate,
   },
+  {
+    id: 4,
+    label: "stores-list-card",
+    component: StoresListCard
+  }
 ];
 
 export { templateList };

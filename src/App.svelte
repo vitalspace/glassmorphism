@@ -9,9 +9,15 @@
   class="bg-gray-800 place-content-center h-full xl:grid xl:place-items-center xl:h-screen font-serif text-gray-300"
 >
   <div class="container flex flex-col mx-auto gap-y-6 xl:px-52">
-    <section class="bg-gray-800 rounded-sm flex flex-col gap-y-2 px-6 pt-6 md:p-0">
+    <section
+      class="bg-gray-800 rounded-sm flex flex-col gap-y-2 px-6 pt-6 md:p-0"
+    >
       <header>
-        <h1 class="text-4xl font-bold text-white [text-shadow:0_0_11px_#af95d2,0_0_1px_#02ff86]">Glassmorphism CSS Generator</h1>
+        <h1
+          class="text-4xl font-bold text-white [text-shadow:0_0_11px_#af95d2,0_0_1px_#02ff86]"
+        >
+          Glassmorphism CSS Generator
+        </h1>
       </header>
       <main>
         <p class="text-md">
@@ -52,13 +58,10 @@
               id=""
               class="bg-gray-800 py-1 outline-none border-[1px] border-gray-600"
             >
-              <option value="singin-card">Singin card</option>
-              <option value="profile-card">Profile card</option>
-              <option value="collections-card">Collections card</option>
+              {#each componentsList as item}
+                <option value={item.label}>{item.name}</option>
+              {/each}
             </select>
-            <!-- <div>
-              <button>Change me</button>
-            </div> -->
           </div>
           <div class="mx-2 mb-2">
             {#each componentsList as item}
