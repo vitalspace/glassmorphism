@@ -56,8 +56,8 @@
     }
   
     $: svelte = `<div style="${backgroundStyles[$backgroundType]}" class="rounded-md p-8 text-white h-screen grid place-items-center bg-cover">
-    <div class="bg-[rgba(${$r},${$g},${$b},${$opacity})] backdrop-blur-[${$blur}px] backdrop-saturate-[${$saturation}%] rounded-xl gap-y-4 flex flex-col px-6 py-6 w-full xl:w-1/4">
-        <header class="my-2">
+  <div class="bg-[rgba(${$r},${$g},${$b},${$opacity})] backdrop-blur-[${$blur}px] backdrop-saturate-[${$saturation}%] rounded-xl gap-y-4 flex flex-col px-6 py-6 w-full xl:w-1/4 text-[#c4c0ff]">
+    <header class="my-2">
       <h1 class="text-2xl">Closest stores</h1>
     </header>
 

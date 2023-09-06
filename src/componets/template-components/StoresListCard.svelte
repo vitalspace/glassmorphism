@@ -35,7 +35,7 @@
     style=" background-color: rgba({$r}, {$g}, {$b}, {$opacity});     
   backdrop-filter: blur({$blur}px) saturate({$saturation}%);
   -webkit-backdrop-filter: blur({$blur}px) saturate({$saturation}%);"
-    class="px-6 py-6 rounded-xl gap-y-4 flex flex-col"
+    class="px-6 py-6 rounded-xl gap-y-4 flex flex-col text-[#c4c0ff]"
   >
     <header class="my-2">
       <h1 class="text-2xl">Closest stores</h1>
