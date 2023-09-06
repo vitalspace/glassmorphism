@@ -184,8 +184,8 @@ https://github.com/highlightjs/highlight.js/issues/2277`),V=m,L=E),I===void 0&&(
       ${r[y]}
     }
       ${r.card}`)),e.$$.dirty&4080&&n(2,o=`<div style="${r[y]}" class="rounded-md p-8 text-white h-screen grid place-items-center bg-cover">
-    <div class="bg-[rgba(${v},${k},${_},${g})] backdrop-blur-[${c}px] backdrop-saturate-[${a}%] rounded-xl gap-y-4 flex flex-col px-6 py-6 w-full xl:w-1/4">
-        <header class="my-2">
+  <div class="bg-[rgba(${v},${k},${_},${g})] backdrop-blur-[${c}px] backdrop-saturate-[${a}%] rounded-xl gap-y-4 flex flex-col px-6 py-6 w-full xl:w-1/4">
+    <header class="my-2">
       <h1 class="text-2xl">Closest stores</h1>
     </header>
 
